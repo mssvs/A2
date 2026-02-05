@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Web Technologies</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(-45deg,#ff512f,#dd2476,#24c6dc,#514a9d,#00bf8f);
+  background-size:400% 400%;
+  animation:bg 15s ease infinite;
+  color:white;
+}
+@keyframes bg{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+h1{
+  text-align:center;
+  font-size:56px;
+  margin:20px;
+  text-shadow:3px 3px 8px #000;
+}
+.main{
+  display:flex;
+  height:calc(100vh - 110px);
+}
+.menu{
+  width:25%;
+  background:rgba(0,0,0,0.7);
+  padding:20px;
+  overflow-y:auto;
+}
+.menu div{
+  padding:15px;
+  margin-bottom:12px;
+  background:linear-gradient(45deg,#ff9800,#ff5722);
+  cursor:pointer;
+  border-radius:10px;
+  text-align:center;
+  font-size:20px;
+  transition:0.4s;
+}
+.menu div:hover{
+  transform:scale(1.05);
+  background:linear-gradient(45deg,#00e5ff,#1de9b6);
+}
+.content{
+  width:75%;
+  padding:30px;
+  overflow-y:auto;
+  background:rgba(0,0,0,0.35);
+}
+h2{color:#ffeb3b}
+h3{color:#00e5ff;margin-top:25px}
+p{
+  line-height:1.8;
+  background:rgba(255,255,255,0.08);
+  padding:12px;
+  border-radius:8px;
+  animation:fade 0.6s ease;
+}
+@keyframes fade{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<h1>WEB TECHNOLOGIES</h1>
+
+<div class="main">
+  <div class="menu">
+    <div onclick="show('u1')">UNIT – I</div>
+    <div onclick="show('u2')">UNIT – II</div>
+    <div onclick="show('u3')">UNIT – III</div>
+    <div onclick="show('u4')">UNIT – IV</div>
+    <div onclick="show('u5')">UNIT – V</div>
+  </div>
+
+  <div class="content" id="content"></div>
+</div>
+
+<script>
+function show(u){
+  const d = {
+
+u1:`<h2>UNIT – I : HTML & Web Basics</h2>
+<h3>Introduction to Web Technology</h3>
+<p>Web technology refers to tools and techniques used to build websites.</p>
+<h3>HTML</h3>
+<p>HTML is used to create the structure of web pages.</p>
+<h3>Forms</h3>
+<p>Forms collect user input.</p>`,
+
+u2:`<h2>UNIT – II : Dynamic Web Pages & CSS</h2>
+<h3>Dynamic Web Pages</h3>
+<p>Dynamic pages change content based on user actions.</p>
+<h3>CSS</h3>
+<p>CSS controls the look and layout of web pages.</p>`,
+
+u3:`<h2>UNIT – III : JavaScript</h2>
+<h3>JavaScript Introduction</h3>
+<p>JavaScript adds interactivity to websites.</p>
+<h3>Functions</h3>
+<p>Functions are reusable blocks of code.</p>`,
+
+u4:`<h2>UNIT – IV : Events</h2>
+<h3>Mouse Events</h3>
+<p>Triggered by mouse actions.</p>
+<h3>Keyboard Events</h3>
+<p>Triggered by key actions.</p>`,
+
+u5:`<h2>UNIT – V : XML</h2>
+<h3>XML Introduction</h3>
+<p>XML is used to store and transport data.</p>
+<h3>XML DOM</h3>
+<p>XML DOM allows accessing XML elements.</p>`
+  };
+
+  document.getElementById("content").innerHTML = d[u];
+}
+
+// Load Unit-I by default
+show('u1');
+</script>
+
+</body>
+</html>
